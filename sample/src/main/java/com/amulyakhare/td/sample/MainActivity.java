@@ -4,16 +4,17 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.amulyakhare.td.R;
 import com.amulyakhare.td.sample.sample.DataItem;
 import com.amulyakhare.td.sample.sample.DataSource;
 
-public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     public static final String TYPE = "TYPE";
     private DataSource mDataSource;
@@ -23,7 +24,6 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mListView = (ListView) findViewById(R.id.listView);
         mDataSource = new DataSource(this);
         mListView.setAdapter(new SampleAdapter());
